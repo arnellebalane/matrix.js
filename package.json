@@ -19,6 +19,9 @@
     },
     "homepage": "https://github.com/arnellebalane/matrix.js",
     "devDependencies": {
-        "gulp": "*"
+        "gulp": "*",
+        "gulp-jshint": "*",
+        "jshint-stylish": "*",
+        "gulp-uglify": "*"
     }
 }
