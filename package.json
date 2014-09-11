@@ -1,0 +1,24 @@
+{
+    "name": "matrix.js",
+    "version": "0.0.0",
+    "description": "javascript utility library for performing matrix operations",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/arnellebalane/matrix.js.git"
+    },
+    "keywords": [
+        "matrix"
+    ],
+    "author": "Arnelle Balane",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/arnellebalane/matrix.js/issues"
+    },
+    "homepage": "https://github.com/arnellebalane/matrix.js",
+    "devDependencies": {
+        "gulp": "*"
+    }
+}
