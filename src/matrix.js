@@ -5,11 +5,21 @@
         root.matrix = library;
     }
 })(this, function() {
+    /*
+     * Custom Error "class" to be thrown on matrix.js
+     * related errors.
+     */
+    function MatrixError(message) {
+        this.name = 'MatrixError';
+        this.message = message;
+    }
+
     return {
         add: null,
         multiply: null,
         transpose: null,
         inverse: null,
-        determinant: null
+        determinant: null,
+        MatrixError: MatrixError
     };
 }());

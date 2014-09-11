@@ -10,12 +10,12 @@ describe('matrix.add', function() {
         assert.deepEqual(expected, actual);
     });
 
-    it('should not perform matrix addition if given two matrices with different dimensions', function() {
+    it('should throw MatrixError if given two matrices with different dimensions', function() {
         var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         var b = [[1, 2], [3, 4], [5, 6]];
-        var expected = null;
-        var actual = matrix.add(a, b);
-        assert.deepEqual(expected, actual);
+        assert.throws(function() {
+            matrix.add(a, b);
+        }, matrix.MatrixError, 'Matrices do not have the same dimensions.');
     });
 
     it('should perform scalar addition if given a matrix and a scalar value', function() {
@@ -34,11 +34,11 @@ describe('matrix.add', function() {
         assert.deepEqual(expected, actual);
     });
 
-    it('should not perform addition if given two scalar values', function() {
+    it('should throw MatrixError if given two scalar values', function() {
         var a = 2;
         var b = 3;
-        var expected = null;
-        var actual = matrix.add(a, b);
-        assert.deepEqual(expected, actual);
+        assert.throws(function() {
+            matrix.add(a, b);
+        }, matrix.MatrixError, 'No matrices given.');
     });
 });
