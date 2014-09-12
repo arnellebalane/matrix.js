@@ -34,6 +34,14 @@ describe('matrix.multiply', function() {
         assert.deepEqual(expected, actual);
     });
 
+    it('should throw MatrixError when given an invalid matrix', function() {
+        var a = [[1, 2, 3], [4, 5], [7, 8, 9]];
+        var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
+        assert.throws(function() {
+            matrix.multiply(a, b);
+        }, matrix.MatrixError, 'A given matrix is invalid.');
+    });
+
     it('should throw MatrixError when not given any matrices', function() {
         var a = 2;
         var b = 3;
