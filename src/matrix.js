@@ -20,6 +20,7 @@
         transpose: null,
         inverse: null,
         determinant: null,
+        valid: null,
         MatrixError: MatrixError
     };
 }());

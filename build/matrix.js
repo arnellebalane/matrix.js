@@ -1,1 +1,1 @@
-!function(n,e){"function"==typeof define&&define.amd?define([],e):n.matrix=e}(this,function(){function n(n){this.name="MatrixError",this.message=n}return{add:null,multiply:null,transpose:null,inverse:null,determinant:null,MatrixError:n}}());
+!function(n,i){"function"==typeof define&&define.amd?define([],i):n.matrix=i}(this,function(){function n(n){this.name="MatrixError",this.message=n}return{add:null,multiply:null,transpose:null,inverse:null,determinant:null,valid:null,MatrixError:n}}());
