@@ -9,6 +9,7 @@
     "globals": {
         "describe": true,
         "it": true,
-        "define": true
+        "define": true,
+        "matrix": true
     }
 }
