@@ -10,12 +10,20 @@ describe('matrix.multiply', function() {
         assert.deepEqual(expected, actual);
     });
 
-    it('should perform matrix multiplication when given two matrices with different dimensions', function() {
+    it('should perform matrix multiplication when given a-by-n and n-by-b matrices', function() {
         var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         var b = [[1, 2], [3, 4], [5, 6]];
         var expected = [[22, 28], [49, 64], [76, 100]];
         var actual = matrix.multiply(a, b);
         assert.deepEqual(expected, actual);
+    });
+
+    it('should throw MatrixError when given a-by-n and m-by-b matrices', function() {
+        var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        var b = [[1, 2, 3], [4, 5, 6]];
+        assert.throws(function() {
+            matrix.multiply(a, b);
+        }, matrix.MatrixError, 'Given matrices are incompatible.');
     });
 
     it('should perform scalar multiplication when given a matrix and a scalar value', function() {
