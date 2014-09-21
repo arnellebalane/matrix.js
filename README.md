@@ -26,6 +26,13 @@ var result = matrix.add(3, a);
 
 ##### matrix.identity
 
+Creates an identity matrix with a given dimensions.
+
+```
+var result = matrix.identity(3);
+// result === [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+```
+
 ##### matrix.multiply
 
 ##### matrix.ones
