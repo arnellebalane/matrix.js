@@ -35,6 +35,23 @@ var result = matrix.identity(3);
 
 ##### matrix.multiply
 
+Multiplies the given matrices.
+
+```
+var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
+var result = matrix.multiply(a, b);
+// result === [[30, 24, 18], [84, 69, 54], [138, 114, 90]]
+```
+
+If one of the arguments is a scalar value, performs scalar multiplication.
+
+```
+var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+var result = matrix.multiply(2, a);
+// result === [[2, 4, 6], [8, 10, 12], [14, 16, 18]];
+```
+
 ##### matrix.ones
 
 ##### matrix.transpose
