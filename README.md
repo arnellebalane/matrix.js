@@ -54,6 +54,16 @@ var result = matrix.multiply(2, a);
 
 ##### matrix.ones
 
+Creates a ones matrix with the given dimensions.
+
+```
+var result = matrix.ones(3);
+// result === [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
+
+var result = matrix.ones(3, 4);
+// result === [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]]
+```
+
 ##### matrix.transpose
 
 ##### matrix.valid
