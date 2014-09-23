@@ -66,6 +66,14 @@ var result = matrix.ones(3, 4);
 
 ##### matrix.transpose
 
+Transposes the given matrix.
+
+```
+var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+var result = matrix.transpose(a);
+// result === [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+```
+
 ##### matrix.valid
 
 ##### matrix.zeros
