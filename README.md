@@ -76,4 +76,16 @@ var result = matrix.transpose(a);
 
 ##### matrix.valid
 
+Checks whether the given matrix is a valid matrix.
+
+```
+var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+var result = matrix.valid(a);
+// result === true
+
+var a = [[1, 2, 3], [4, 5], [7, 8, 9]]
+var result = matrix.valid(a);
+// result == false
+```
+
 ##### matrix.zeros
