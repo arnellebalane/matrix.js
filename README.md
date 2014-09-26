@@ -89,3 +89,13 @@ var result = matrix.valid(a);
 ```
 
 ##### matrix.zeros
+
+Creates a zeros matrix with the given dimensions.
+
+```
+var result = matrix.zeros(3);
+// result === [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+var result = matrix.zeros(3, 4);
+// result === [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+```
