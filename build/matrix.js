@@ -1,1 +1,0 @@
-!function(n,i){"function"==typeof define&&define.amd?define([],i):n.matrix=i}(this,function(){function n(n){this.name="MatrixError",this.message=n}return{add:null,multiply:null,transpose:null,inverse:null,determinant:null,valid:null,MatrixError:n}}());
