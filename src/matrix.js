@@ -37,8 +37,6 @@
         inverse: null,
         determinant: null,
         identity: null,
-        zeros: null,
-        ones: null,
         valid: valid,
         MatrixError: MatrixError
     };
