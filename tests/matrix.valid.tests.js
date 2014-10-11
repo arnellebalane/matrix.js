@@ -29,4 +29,10 @@ describe('matrix.valid', function() {
         var actual = matrix.valid(a);
         assert.equal(expected, actual);
     });
+
+    it('should be integrated to Array.prototype', function() {
+        var expected = true;
+        var actual = Array.prototype.hasOwnProperty('valid');
+        assert.equal(expected, actual);
+    });
 });

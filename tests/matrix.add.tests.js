@@ -49,4 +49,10 @@ describe('matrix.add', function() {
             matrix.add(a, b);
         }, matrix.MatrixError, 'No matrices given.');
     });
+
+    it('should be integrated to Array.prototype', function() {
+        var expected = true;
+        var actual = Array.prototype.hasOwnProperty('add');
+        assert.equal(expected, actual);
+    });
 });

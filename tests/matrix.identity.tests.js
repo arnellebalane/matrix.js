@@ -25,4 +25,10 @@ describe('matrix.identity', function() {
             matrix.identity('a');
         }, matrix.MatrixError, 'Invalid matrix dimensions given.');
     });
+
+    it('should be integrated to Array.prototype', function() {
+        var expected = true;
+        var actual = Array.prototype.hasOwnProperty('identity');
+        assert.equal(expected, actual);
+    });
 });

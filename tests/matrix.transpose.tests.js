@@ -36,4 +36,10 @@ describe('matrix.transpose', function() {
             matrix.transpose(a);
         }, matrix.MatrixError, 'No matrix given.');
     });
+
+    it('should be integrated to Array.prototype', function() {
+        var expected = true;
+        var actual = Array.prototype.hasOwnProperty('transpose');
+        assert.equal(expected, actual);
+    });
 });
