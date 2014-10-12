@@ -30,6 +30,9 @@
         return false;
     }
 
+    // Attach matrix methods to Array.prototype
+    Array.prototype.valid = valid;
+
     return {
         add: null,
         multiply: null,
