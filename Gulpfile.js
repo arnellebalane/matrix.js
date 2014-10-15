@@ -5,20 +5,45 @@ var uglify = require('gulp-uglify');
 var mocha = require('gulp-mocha');
 
 gulp.task('jshint', function() {
-    return gulp.src(['src/**/*.js', 'tests/**/*.js', 'Gulpfile.js'])
+    gulp.src(['src/**/*.js', 'tests/**/*.js', 'Gulpfile.js'])
         .pipe(jshint())
         .pipe(jshint.reporter(stylish))
         .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('compress', function() {
-    return gulp.src('src/**/*.js')
+    gulp.src('src/**/*.js')
         .pipe(uglify())
         .pipe(gulp.dest('build'));
 });
 
 gulp.task('test', function() {
-    return gulp.src('tests/**/*.js', { read: false })
+    gulp.src('tests/**/*.js', { read: false })
+        .pipe(mocha());
+});
+
+gulp.task('test:matrix:add', function() {
+    gulp.src('tests/matrix.add.tests.js', { read: false })
+        .pipe(mocha());
+});
+
+gulp.task('test:matrix:identity', function() {
+    gulp.src('tests/matrix.identity.tests.js', { read: false })
+        .pipe(mocha());
+});
+
+gulp.task('test:matrix:multiply', function() {
+    gulp.src('tests/matrix.multiply.tests.js', { read: false })
+        .pipe(mocha());
+});
+
+gulp.task('test:matrix:transpose', function() {
+    gulp.src('tests/matrix.transpose.tests.js', { read: false })
+        .pipe(mocha());
+});
+
+gulp.task('test:matrix:valid', function() {
+    gulp.src('tests/matrix.valid.tests.js', { read: false })
         .pipe(mocha());
 });
 
