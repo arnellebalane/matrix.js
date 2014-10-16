@@ -3,6 +3,7 @@ var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var uglify = require('gulp-uglify');
 var mocha = require('gulp-mocha');
+var argv = require('yargs').argv;
 
 gulp.task('jshint', function() {
     gulp.src(['src/**/*.js', 'tests/**/*.js', 'Gulpfile.js'])
@@ -18,37 +19,7 @@ gulp.task('compress', function() {
 });
 
 gulp.task('test', function() {
-    gulp.src('tests/**/*.js', { read: false })
-        .pipe(mocha());
-});
-
-gulp.task('test:matrix:add', function() {
-    gulp.src('tests/matrix.add.tests.js', { read: false })
-        .pipe(mocha());
-});
-
-gulp.task('test:matrix:determinant', function() {
-    gulp.src('tests/matrix.determinant.tests.js', { read: false })
-        .pipe(mocha());
-});
-
-gulp.task('test:matrix:identity', function() {
-    gulp.src('tests/matrix.identity.tests.js', { read: false })
-        .pipe(mocha());
-});
-
-gulp.task('test:matrix:multiply', function() {
-    gulp.src('tests/matrix.multiply.tests.js', { read: false })
-        .pipe(mocha());
-});
-
-gulp.task('test:matrix:transpose', function() {
-    gulp.src('tests/matrix.transpose.tests.js', { read: false })
-        .pipe(mocha());
-});
-
-gulp.task('test:matrix:valid', function() {
-    gulp.src('tests/matrix.valid.tests.js', { read: false })
+    gulp.src('tests/' + (argv.f ? argv.f : '**/*') + '.js', { read: false })
         .pipe(mocha());
 });
 
