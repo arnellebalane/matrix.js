@@ -23,6 +23,20 @@ describe('matrix.transpose', function() {
         assert.deepEqual(expected, actual);
     });
 
+    it('should transpose a 1-by-n matrix', function() {
+        var a = [[1, 2, 3, 4, 5]];
+        var expected = [[1], [2], [3], [4], [5]];
+        var actual = matrix.transpose(a);
+        assert.deepEqual(expected, actual);
+    });
+
+    it('should transpose an n-by-1 matrix', function() {
+        var a = [[1], [2], [3], [4], [5]];
+        var expected = [[1, 2, 3, 4, 5]];
+        var actual = matrix.transpose(a);
+        assert.deepEqual(expected, actual);
+    });
+
     it('should throw MatrixError when given an invalid matrix', function() {
         var a = [[1, 2, 3], [4, 5], [7, 8, 9]];
         assert.throws(function() {
