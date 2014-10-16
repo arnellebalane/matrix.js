@@ -27,6 +27,11 @@ gulp.task('test:matrix:add', function() {
         .pipe(mocha());
 });
 
+gulp.task('test:matrix:determinant', function() {
+    gulp.src('tests/matrix.determinant.tests.js', { read: false })
+        .pipe(mocha());
+});
+
 gulp.task('test:matrix:identity', function() {
     gulp.src('tests/matrix.identity.tests.js', { read: false })
         .pipe(mocha());
