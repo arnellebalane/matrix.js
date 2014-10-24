@@ -35,4 +35,11 @@ describe('matrix.valid', function() {
         var actual = Array.prototype.hasOwnProperty('valid');
         assert.equal(expected, actual);
     });
+
+    it('should validate a matrix through the Array.prototype property', function() {
+        var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        var expected = true;
+        var actual = a.valid();
+        assert.equal(expected, actual);
+    });
 });

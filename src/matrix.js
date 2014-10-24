@@ -49,7 +49,9 @@
     }
 
     // Attach matrix methods to Array.prototype
-    Array.prototype.valid = valid;
+    Array.prototype.valid = function() {
+        return valid(this);
+    };
     Array.prototype.transpose = function() {
         return transpose(this);
     };
