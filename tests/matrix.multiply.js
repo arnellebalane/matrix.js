@@ -63,4 +63,12 @@ describe('matrix.multiply', function() {
         var actual = Array.prototype.hasOwnProperty('multiply');
         assert.equal(expected, actual);
     });
+
+    it('should multiply valid matrices through the Array.prototype property', function() {
+        var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
+        var expected = [[30, 24, 18], [84, 69, 54], [138, 114, 90]];
+        var actual = a.multiply(b);
+        assert.deepEqual(expected, actual);
+    });
 });
