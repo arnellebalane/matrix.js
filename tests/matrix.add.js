@@ -55,4 +55,12 @@ describe('matrix.add', function() {
         var actual = Array.prototype.hasOwnProperty('add');
         assert.equal(expected, actual);
     });
+
+    it('should add valid matrices through the Array.prototype property', function() {
+        var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
+        var expected = [[10, 10, 10], [10, 10, 10], [10, 10, 10]];
+        var actual = a.add(b);
+        assert.deepEqual(expected, actual);
+    });
 });
