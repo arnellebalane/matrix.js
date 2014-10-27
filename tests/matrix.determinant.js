@@ -49,4 +49,11 @@ describe('matrix.determinant', function() {
         var actual = Array.prototype.hasOwnProperty('determinant');
         assert.equal(expected, actual);
     });
+
+    it('should calculate the determinant of a valid matrix through the Array.prototype property', function() {
+        var a = [[1]];
+        var expected = 1;
+        var actual = a.determinant();
+        assert.equal(expected, actual);
+    });
 });
