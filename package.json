@@ -23,6 +23,7 @@
         "gulp-jshint": "*",
         "jshint-stylish": "*",
         "gulp-uglify": "*",
-        "gulp-mocha": "*"
+        "gulp-mocha": "*", 
+        "yargs": "*"
     }
 }
