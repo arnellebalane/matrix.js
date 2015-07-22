@@ -2,7 +2,8 @@
 // var assert = require('assert');
 
 // describe('matrix.add', function() {
-//     it('should perform matrix addition when given two matrices with the same dimensions', function() {
+//     it('should perform matrix addition when given two matrices with the '
+//         + 'same dimensions', function() {
 //         var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 //         var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
 //         var expected = [[10, 10, 10], [10, 10, 10], [10, 10, 10]];
@@ -10,15 +11,18 @@
 //         assert.deepEqual(expected, actual);
 //     });
 
-//     it('should throw MatrixError when given two matrices with different dimensions', function() {
+//     it('should throw MatrixError when given two matrices with different '
+//         + 'dimensions', function() {
 //         var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 //         var b = [[1, 2], [3, 4], [5, 6]];
 //         assert.throws(function() {
 //             matrix.add(a, b);
-//         }, matrix.MatrixError, 'Matrices do not have the same dimensions.');
+//         }, matrix.MatrixError, 'Matrices are not of the same '
+//         + 'dimensions.');
 //     });
 
-//     it('should perform scalar addition when given a matrix and a scalar value', function() {
+//     it('should perform scalar addition when given a matrix and a scalar '
+//         + 'value', function() {
 //         var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 //         var b = 2;
 //         var expected = [[3, 4, 5], [6, 7, 8], [9, 10, 11]];
@@ -26,7 +30,8 @@
 //         assert.deepEqual(expected, actual);
 //     });
 
-//     it('should perform scalar addition when given a scalar value and a matrix', function() {
+//     it('should perform scalar addition when given a scalar value and a '
+//         + 'matrix', function() {
 //         var a = 2;
 //         var b = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 //         var expected = [[3, 4, 5], [6, 7, 8], [9, 10, 11]];
@@ -56,7 +61,8 @@
 //         assert.equal(expected, actual);
 //     });
 
-//     it('should add valid matrices through the Array.prototype property', function() {
+//     it('should add valid matrices through the Array.prototype '
+//         + 'property', function() {
 //         var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 //         var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
 //         var expected = [[10, 10, 10], [10, 10, 10], [10, 10, 10]];

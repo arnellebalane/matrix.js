@@ -66,4 +66,4 @@
         valid: valid,
         MatrixError: MatrixError
     };
-}());
+})();

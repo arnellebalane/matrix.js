@@ -57,10 +57,12 @@ describe('matrix.transpose', function() {
         assert.equal(expected, actual);
     });
 
-    it('should transpose an array through the Array.prototype property', function() {
-        var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-        var expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]];
-        var actual = a.transpose();
-        assert.deepEqual(expected, actual);
-    });
+    it('should transpose an array through the Array.prototype property',
+        function() {
+            var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+            var expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]];
+            var actual = a.transpose();
+            assert.deepEqual(expected, actual);
+        }
+    );
 });
