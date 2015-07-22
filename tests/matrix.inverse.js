@@ -1,6 +1,6 @@
-var matrix = require('../src/matrix').matrix;
-var assert = require('assert');
+// var matrix = require('../src/matrix').matrix;
+// var assert = require('assert');
 
-describe('matrix.inverse', function() {
+// describe('matrix.inverse', function() {
 
-});
+// });
