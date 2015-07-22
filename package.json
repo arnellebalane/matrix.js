@@ -1,29 +1,32 @@
 {
-    "name": "matrix.js",
-    "version": "0.0.0",
-    "description": "javascript utility library for performing matrix operations",
-    "scripts": {
-        "test": "gulp test"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/arnellebalane/matrix.js.git"
-    },
-    "keywords": [
-        "matrix"
-    ],
-    "author": "Arnelle Balane",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/arnellebalane/matrix.js/issues"
-    },
-    "homepage": "https://github.com/arnellebalane/matrix.js",
-    "devDependencies": {
-        "gulp": "*",
-        "gulp-jshint": "*",
-        "jshint-stylish": "*",
-        "gulp-uglify": "*",
-        "gulp-mocha": "*", 
-        "yargs": "*"
-    }
+  "name": "matrix.js",
+  "version": "0.0.0",
+  "description": "javascript utility library for performing matrix operations",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arnellebalane/matrix.js.git"
+  },
+  "keywords": [
+    "matrix"
+  ],
+  "author": "Arnelle Balane",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arnellebalane/matrix.js/issues"
+  },
+  "homepage": "https://github.com/arnellebalane/matrix.js",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-jscs": "^1.6.0",
+    "gulp-jscs-stylish": "^1.1.0",
+    "gulp-jshint": "*",
+    "gulp-mocha": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "^3.0.6",
+    "jshint-stylish": "*",
+    "yargs": "*"
+  }
 }

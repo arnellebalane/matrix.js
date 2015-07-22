@@ -1,14 +1,19 @@
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
-var stylish = require('jshint-stylish');
+var jscs = require('gulp-jscs');
+var stylish = require('gulp-jscs-stylish');
 var uglify = require('gulp-uglify');
+var gutil = require('gulp-util');
 var mocha = require('gulp-mocha');
 var argv = require('yargs').argv;
 
-gulp.task('jshint', function() {
-    gulp.src(['src/**/*.js', 'tests/**/*.js', 'Gulpfile.js'])
+gulp.task('lint', function() {
+    gulp.src(['src/**/*.js', 'tests/**/*.js', 'gulpfile.js'])
         .pipe(jshint())
-        .pipe(jshint.reporter(stylish))
+        .pipe(jscs())
+        .on('error', gutil.noop)
+        .pipe(stylish.combineWithHintResults())
+        .pipe(jshint.reporter('jshint-stylish'))
         .pipe(jshint.reporter('fail'));
 });
 
@@ -23,4 +28,4 @@ gulp.task('test', function() {
         .pipe(mocha());
 });
 
-gulp.task('default', ['jshint', 'test', 'compress']);
+gulp.task('default', ['lint', 'test', 'compress']);
