@@ -2,7 +2,7 @@
     if (typeof define === 'function' && define.amd) {
         define([], library);
     } else {
-        root.matrix = library;
+        root.matrix = library();
     }
 })(this, function() {
     /*
@@ -66,4 +66,4 @@
         valid: valid,
         MatrixError: MatrixError
     };
-})();
+});
