@@ -1,6 +1,8 @@
 matrix.js
 =========
 
+![Travis CI](https://travis-ci.org/arnellebalane/matrix.js.svg?branch=master)
+
 javascript utility library for performing matrix operations
 
 #### Available Operations
