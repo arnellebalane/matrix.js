@@ -143,6 +143,10 @@
 
 
     // Attach matrix methods to Array.prototype
+    Array.prototype.add = function(value) {
+        return add(this, value);
+    };
+
     Array.prototype.valid = function() {
         return valid(this);
     };
