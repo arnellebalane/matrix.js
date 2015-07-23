@@ -70,6 +70,25 @@
     }
 
 
+    /**
+     *  Creates a zeros matrix with the given dimensions.
+     */
+    function zeros(rows, columns) {
+        columns = columns || rows;
+        if (typeof rows === 'number' && typeof columns === 'number') {
+            var matrix = [];
+            for (var i = 0; i < rows; i++) {
+                matrix.push([]);
+                for (var j = 0; j < columns; j++) {
+                    matrix[i].push(0);
+                }
+            }
+            return matrix;
+        }
+        throw new TypeError('Matrix dimensions should be integers.');
+    }
+
+
     // Attach matrix methods to Array.prototype
     Array.prototype.valid = function() {
         return valid(this);
@@ -89,7 +108,7 @@
         identity: null,
         valid: valid,
         ones: ones,
-        zeros: null,
+        zeros: zeros,
         MatrixError: MatrixError
     };
 });
