@@ -165,6 +165,10 @@
         return valid(this);
     };
 
+    Array.prototype.dimensions = function() {
+        return dimensions(this);
+    };
+
     Array.prototype.transpose = function() {
         return transpose(this);
     };
