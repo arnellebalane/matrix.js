@@ -165,6 +165,10 @@
         return add(this, value);
     };
 
+    Array.prototype.identity = function() {
+        return identity(this);
+    };
+
     Array.prototype.valid = function() {
         return valid(this);
     };
