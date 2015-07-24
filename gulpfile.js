@@ -8,7 +8,7 @@ var argv = require('yargs').argv;
 
 
 gulp.task('lint', function() {
-    gulp.src(['src/**/*.js', 'tests/**/*.js', 'gulpfile.js'])
+    return gulp.src(['src/**/*.js', 'tests/**/*.js', 'gulpfile.js'])
         .pipe(jshint())
         .pipe(jscs())
         .on('error', gutil.noop)
@@ -18,8 +18,8 @@ gulp.task('lint', function() {
 });
 
 
-gulp.task('compress', function() {
-    gulp.src('src/**/*.js')
+gulp.task('compress', ['lint'], function() {
+    return gulp.src('src/**/*.js')
         .pipe(uglify())
         .pipe(gulp.dest('build'));
 });
