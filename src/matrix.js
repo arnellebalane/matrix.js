@@ -123,6 +123,20 @@
 
 
     /**
+     *  Returns the dimensions (rows and columns) of the given matrix.
+     */
+    function dimensions(matrix) {
+        if (valid(matrix)) {
+            return {
+                rows: matrix.length,
+                columns: matrix.length ? matrix[0].length : 0
+            };
+        }
+        throw new MatrixError('Given matrix is invalid.');
+    }
+
+
+    /**
      *  Creates a ones matrix with the given dimensions.
      */
     function ones(rows, columns) {
@@ -173,6 +187,10 @@
         return valid(this);
     };
 
+    Array.prototype.dimensions = function() {
+        return dimensions(this);
+    };
+
     Array.prototype.transpose = function() {
         return transpose(this);
     };
@@ -186,6 +204,7 @@
         determinant: null,
         identity: identity,
         valid: valid,
+        dimensions: dimensions,
         ones: ones,
         zeros: zeros,
         MatrixError: MatrixError
