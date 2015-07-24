@@ -3,8 +3,8 @@ var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 var stylish = require('gulp-jscs-stylish');
 var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 var gutil = require('gulp-util');
-var argv = require('yargs').argv;
 
 
 gulp.task('lint', function() {
@@ -21,6 +21,9 @@ gulp.task('lint', function() {
 gulp.task('compress', ['lint'], function() {
     return gulp.src('src/**/*.js')
         .pipe(uglify())
+        .pipe(rename(function(path) {
+            path.extname = '.min.js';
+        }))
         .pipe(gulp.dest('build'));
 });
 
