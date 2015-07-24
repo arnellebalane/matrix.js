@@ -69,6 +69,24 @@
 
 
     /**
+     *  Creates an identity matrix with the given size.
+     */
+    function identity(size) {
+        if (size !== undefined && size >= 0) {
+            var matrix = [];
+            for (var i = 0; i < size; i++) {
+                matrix.push([]);
+                for (var j = 0; j < size; j++) {
+                    matrix[i][j] = i === j ? 1 : 0;
+                }
+            }
+            return matrix;
+        }
+        throw new MatrixError('Invalid matrix dimensions given.');
+    }
+
+
+    /**
      *  Accepts a matrix and returns the transpose of the
      *  given matrix.
      */
@@ -147,6 +165,10 @@
         return add(this, value);
     };
 
+    Array.prototype.identity = function() {
+        return identity(this);
+    };
+
     Array.prototype.valid = function() {
         return valid(this);
     };
@@ -162,7 +184,7 @@
         transpose: transpose,
         inverse: null,
         determinant: null,
-        identity: null,
+        identity: identity,
         valid: valid,
         ones: ones,
         zeros: zeros,
