@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "javascript utility library for performing matrix operations",
   "scripts": {
-    "test": "gulp test"
+    "test": "mocha tests"
   },
   "repository": {
     "type": "git",
@@ -23,10 +23,10 @@
     "gulp-jscs": "^1.6.0",
     "gulp-jscs-stylish": "^1.1.0",
     "gulp-jshint": "*",
-    "gulp-mocha": "*",
     "gulp-uglify": "*",
     "gulp-util": "^3.0.6",
     "jshint-stylish": "*",
+    "mocha": "^2.2.5",
     "yargs": "*"
   }
 }
