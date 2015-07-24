@@ -1,13 +1,13 @@
-var gulp = require('gulp');
-var jshint = require('gulp-jshint');
-var jscs = require('gulp-jscs');
-var stylish = require('gulp-jscs-stylish');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var gutil = require('gulp-util');
+import gulp from 'gulp';
+import jshint from 'gulp-jshint';
+import jscs from 'gulp-jscs';
+import stylish from 'gulp-jscs-stylish';
+import uglify from 'gulp-uglify';
+import rename from 'gulp-rename';
+import gutil from 'gulp-util';
 
 
-gulp.task('lint', function() {
+gulp.task('lint', () => {
     return gulp.src(['src/**/*.js', 'tests/**/*.js', 'gulpfile.js'])
         .pipe(jshint())
         .pipe(jscs())
@@ -18,7 +18,7 @@ gulp.task('lint', function() {
 });
 
 
-gulp.task('compress', ['lint'], function() {
+gulp.task('compress', ['lint'], () => {
     return gulp.src('src/**/*.js')
         .pipe(uglify())
         .pipe(rename(function(path) {
