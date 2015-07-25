@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "javascript utility library for performing matrix operations",
   "scripts": {
-    "test": "mocha tests"
+    "test": "istanbul test node_modules/mocha/bin/_mocha -- tests"
   },
   "repository": {
     "type": "git",
