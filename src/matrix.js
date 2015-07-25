@@ -69,6 +69,41 @@
 
 
     /**
+     *  Performs scalar multiplication on the given matrix and scalar value.
+     */
+    function _scalarMultiplication(matrix, scalar) {
+        if (valid(matrix)) {
+            var result = [];
+            for (var i = 0; i < matrix.length; i++) {
+                result.push([]);
+                for (var j = 0; j < matrix[i].length; j++) {
+                    result[i].push(matrix[i][j] * scalar);
+                }
+            }
+            return result;
+        }
+        throw new MatrixError('A given matrix is invalid.');
+    }
+
+
+    /**
+     *  Performs matrix multiplication when given two matrices, or scalar
+     *  multiplication when given a matrix and a scalar value.
+     */
+    function multiply(a, b) {
+        if (a instanceof Array && b instanceof Array) {
+
+        } else if ((typeof a === 'number' && b instanceof Array)
+                || (typeof b === 'number' && a instanceof Array)) {
+            var matrix = a instanceof Array ? a : b;
+            var scalar = a instanceof Array ? b : a;
+            return _scalarMultiplication(matrix, scalar);
+        }
+        throw new MatrixError('No matrices given.');
+    }
+
+
+    /**
      *  Creates an identity matrix with the given size.
      */
     function identity(size) {
