@@ -266,6 +266,10 @@
         return add(this, value);
     };
 
+    Array.prototype.multiply = function(value) {
+        return multiply(this, value);
+    };
+
     Array.prototype.identity = function() {
         return identity(this);
     };
