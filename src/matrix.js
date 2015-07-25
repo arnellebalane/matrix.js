@@ -16,6 +16,33 @@
 
 
     /**
+     *  Returns the requested row of the given matrix.
+     */
+    function _getRow(matrix, index) {
+        if (index < matrix.length) {
+            return matrix[index];
+        }
+        throw new MatrixError('Row index out of bounds.');
+
+    }
+
+
+    /**
+     *  Returns the requested column of the given matrix.
+     */
+    function _getColumn(matrix, index) {
+        if (index < matrix[0].length) {
+            var column = [];
+            for (var i = 0; i < matrix.length; i++) {
+                column.push(matrix[i][index]);
+            }
+            return column;
+        }
+        throw new MatrixError('Column index out of bounds.');
+    }
+
+
+    /**
      *  Performs matrix addition on given matrices.
      */
     function _matrixAddition(a, b) {
@@ -62,7 +89,70 @@
                 || (typeof b === 'number' && a instanceof Array)) {
             var matrix = a instanceof Array ? a : b;
             var scalar = a instanceof Array ? b : a;
+            if (!valid(matrix)) {
+                throw new MatrixError('A given matrix is invalid.');
+            }
             return _scalarAddition(matrix, scalar);
+        }
+        throw new MatrixError('No matrices given.');
+    }
+
+
+    /**
+     *  Performs matrix multiplication on given matrices.
+     */
+    function _matrixMultiplication(a, b) {
+        var result = [];
+        for (var i = 0; i < a.length && i < b.length; i++) {
+            result.push([]);
+            var row = _getRow(a, i);
+            for (var j = 0; j < a[0].length && j < b[0].length; j++) {
+                var column = _getColumn(b, j);
+                result[i][j] = 0;
+                for (var k = 0; k < row.length; k++) {
+                    result[i][j] += row[k] * column[k];
+                }
+            }
+        }
+        return result;
+    }
+
+
+    /**
+     *  Performs scalar multiplication on the given matrix and scalar value.
+     */
+    function _scalarMultiplication(matrix, scalar) {
+        var result = [];
+        for (var i = 0; i < matrix.length; i++) {
+            result.push([]);
+            for (var j = 0; j < matrix[i].length; j++) {
+                result[i].push(matrix[i][j] * scalar);
+            }
+        }
+        return result;
+    }
+
+
+    /**
+     *  Performs matrix multiplication when given two matrices, or scalar
+     *  multiplication when given a matrix and a scalar value.
+     */
+    function multiply(a, b) {
+        if (a instanceof Array && b instanceof Array) {
+            if (!valid(a) || !valid(b)) {
+                throw new MatrixError('A given matrix is invalid.');
+            } else if (dimensions(a).columns !== dimensions(b).rows) {
+                throw new MatrixError('Given matrices are incompatible.');
+            }
+            return _matrixMultiplication(a, b);
+        } else if ((typeof a === 'number' && b instanceof Array)
+                || (typeof b === 'number' && a instanceof Array)) {
+            var matrix = a instanceof Array ? a : b;
+            var scalar = a instanceof Array ? b : a;
+            if (!valid(matrix)) {
+                throw new MatrixError('A given matrix is invalid.');
+            }
+            return _scalarMultiplication(matrix, scalar);
         }
         throw new MatrixError('No matrices given.');
     }
@@ -179,6 +269,10 @@
         return add(this, value);
     };
 
+    Array.prototype.multiply = function(value) {
+        return multiply(this, value);
+    };
+
     Array.prototype.identity = function() {
         return identity(this);
     };
@@ -198,7 +292,7 @@
 
     return {
         add: add,
-        multiply: null,
+        multiply: multiply,
         transpose: transpose,
         inverse: null,
         determinant: null,
