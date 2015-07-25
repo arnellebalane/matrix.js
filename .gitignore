@@ -1,5 +1,3 @@
-# ignore node_modules
 node_modules/
-
-# ignore build directory
 build/
+coverage/
