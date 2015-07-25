@@ -89,6 +89,9 @@
                 || (typeof b === 'number' && a instanceof Array)) {
             var matrix = a instanceof Array ? a : b;
             var scalar = a instanceof Array ? b : a;
+            if (!valid(matrix)) {
+                throw new MatrixError('A given matrix is invalid.');
+            }
             return _scalarAddition(matrix, scalar);
         }
         throw new MatrixError('No matrices given.');
