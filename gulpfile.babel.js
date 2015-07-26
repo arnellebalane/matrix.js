@@ -26,4 +26,9 @@ gulp.task('compile', () => {
 });
 
 
-gulp.task('default', ['compile']);
+gulp.task('watch', () => {
+    return gulp.watch(['src/**/*.js', 'tests/**/*.js'], ['compile']);
+});
+
+
+gulp.task('default', ['compile', 'watch']);
