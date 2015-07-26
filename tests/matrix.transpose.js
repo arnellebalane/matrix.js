@@ -1,64 +1,65 @@
-var matrix = require('../src/matrix').matrix;
-var assert = require('assert');
+import { transpose, MatrixError } from '../src/matrix';
+import assert from 'assert';
 
-describe('matrix.transpose', function() {
-    it('should transpose an empty matrix', function() {
+
+describe('matrix.transpose', () => {
+    it('should transpose an empty matrix', () => {
         var a = [];
         var expected = [];
-        var actual = matrix.transpose(a);
+        var actual = transpose(a);
         assert.deepEqual(expected, actual);
     });
 
-    it('should transpose a non-empty square matrix', function() {
+    it('should transpose a non-empty square matrix', () => {
         var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         var expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]];
-        var actual = matrix.transpose(a);
+        var actual = transpose(a);
         assert.deepEqual(expected, actual);
     });
 
-    it('should transpose a non-empty non-square matrix', function() {
+    it('should transpose a non-empty non-square matrix', () => {
         var a = [[1, 2, 3], [4, 5, 6]];
         var expected = [[1, 4], [2, 5], [3, 6]];
-        var actual = matrix.transpose(a);
+        var actual = transpose(a);
         assert.deepEqual(expected, actual);
     });
 
-    it('should transpose a 1-by-n matrix', function() {
+    it('should transpose a 1-by-n matrix', () => {
         var a = [[1, 2, 3, 4, 5]];
         var expected = [[1], [2], [3], [4], [5]];
-        var actual = matrix.transpose(a);
+        var actual = transpose(a);
         assert.deepEqual(expected, actual);
     });
 
-    it('should transpose an n-by-1 matrix', function() {
+    it('should transpose an n-by-1 matrix', () => {
         var a = [[1], [2], [3], [4], [5]];
         var expected = [[1, 2, 3, 4, 5]];
-        var actual = matrix.transpose(a);
+        var actual = transpose(a);
         assert.deepEqual(expected, actual);
     });
 
-    it('should throw MatrixError when given an invalid matrix', function() {
+    it('should throw MatrixError when given an invalid matrix', () => {
         var a = [[1, 2, 3], [4, 5], [7, 8, 9]];
-        assert.throws(function() {
-            matrix.transpose(a);
-        }, matrix.MatrixError, 'Given matrix is invalid.');
+        assert.throws(() => {
+            transpose(a);
+        }, MatrixError, 'Given matrix is invalid.');
     });
 
-    it('should throw MatrixError when not given a matrix', function() {
+    it('should throw MatrixError when not given a matrix', () => {
         var a = 12;
-        assert.throws(function() {
-            matrix.transpose(a);
-        }, matrix.MatrixError, 'No matrix given.');
+        assert.throws(() => {
+            transpose(a);
+        }, MatrixError, 'No matrix given.');
     });
 
-    it('should be integrated to Array.prototype', function() {
+    it('should be integrated to Array.prototype', () => {
         var expected = true;
         var actual = Array.prototype.hasOwnProperty('transpose');
         assert.equal(expected, actual);
     });
 
     it('should transpose an array through the Array.prototype property',
-        function() {
+        () => {
             var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
             var expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]];
             var actual = a.transpose();
