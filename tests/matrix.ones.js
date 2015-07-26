@@ -18,19 +18,16 @@ describe('matrix.ones', () => {
     );
 
     it('should throw TypeError when not given any arguments', () => {
-        assert.throws(() => {
-            ones();
-        }, TypeError, 'Matrix dimensions should be integers.');
+        assert.throws(() => ones(), TypeError,
+            'Matrix dimensions should be integers.');
     });
 
     it('should throw TypeError when any given argument is not a number',
         () => {
-            assert.throws(() => {
-                ones('string');
-            }, TypeError, 'Matrix dimensions should be integers.');
-            assert.throws(() => {
-                ones(3, 'string');
-            }, TypeError, 'Matrix dimensions should be integers.');
+            assert.throws(() => ones('string'), TypeError,
+                'Matrix dimensions should be integers.');
+            assert.throws(() => ones(3, 'string'), TypeError,
+                'Matrix dimensions should be integers.');
         }
     );
 });

@@ -40,16 +40,13 @@ describe('matrix.transpose', () => {
 
     it('should throw MatrixError when given an invalid matrix', () => {
         var a = [[1, 2, 3], [4, 5], [7, 8, 9]];
-        assert.throws(() => {
-            transpose(a);
-        }, MatrixError, 'Given matrix is invalid.');
+        assert.throws(() => transpose(a), MatrixError,
+            'Given matrix is invalid.');
     });
 
     it('should throw MatrixError when not given a matrix', () => {
         var a = 12;
-        assert.throws(() => {
-            transpose(a);
-        }, MatrixError, 'No matrix given.');
+        assert.throws(() => transpose(a), MatrixError, 'No matrix given.');
     });
 
     it('should be integrated to Array.prototype', () => {

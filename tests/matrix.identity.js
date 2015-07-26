@@ -20,16 +20,14 @@ describe('matrix.identity', () => {
 
     it('should throw MatrixError when given a negative integer for its '
         + 'dimensions', () => {
-        assert.throws(() => {
-            identity(-3);
-        }, MatrixError, 'Invalid matrix dimensions given.');
+        assert.throws(() => identity(-3), MatrixError,
+            'Invalid matrix dimensions given.');
     });
 
     it('should throw MatrixError when not given an integer for its dimensions',
         () => {
-            assert.throws(() => {
-                identity('a');
-            }, MatrixError, 'Invalid matrix dimensions given.');
+            assert.throws(() => identity('a'), MatrixError,
+                'Invalid matrix dimensions given.');
         }
     );
 

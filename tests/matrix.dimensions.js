@@ -19,9 +19,8 @@ describe('matrix.dimensions', () => {
 
     it('should throw MatrixError when given an invalid matrix', () => {
         var a = [[1, 2, 3], [4, 5], [6, 7, 8]];
-        assert.throws(() => {
-            dimensions(a);
-        }, MatrixError, 'Given matrix is invalid.');
+        assert.throws(() => dimensions(a), MatrixError,
+            'Given matrix is invalid.');
     });
 
     it('should be integated to Array.prototype', () => {

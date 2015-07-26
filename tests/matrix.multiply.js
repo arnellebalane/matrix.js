@@ -24,9 +24,8 @@ describe('matrix.multiply', () => {
         () => {
             var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
             var b = [[1, 2, 3], [4, 5, 6]];
-            assert.throws(() => {
-                multiply(a, b);
-            }, MatrixError, 'Given matrices are incompatible.');
+            assert.throws(() => multiply(a, b), MatrixError,
+                'Given matrices are incompatible.');
         }
     );
 
@@ -51,17 +50,14 @@ describe('matrix.multiply', () => {
     it('should throw MatrixError when given an invalid matrix', () => {
         var a = [[1, 2, 3], [4, 5], [7, 8, 9]];
         var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
-        assert.throws(() => {
-            multiply(a, b);
-        }, MatrixError, 'A given matrix is invalid.');
+        assert.throws(() => multiply(a, b), MatrixError,
+            'A given matrix is invalid.');
     });
 
     it('should throw MatrixError when not given any matrices', () => {
         var a = 2;
         var b = 3;
-        assert.throws(() => {
-            multiply(a, b);
-        }, MatrixError, 'No matrices given.');
+        assert.throws(() => multiply(a, b), MatrixError, 'No matrices given.');
     });
 
     it('should be integrated to Array.prototype', () => {

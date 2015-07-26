@@ -16,9 +16,8 @@ describe('matrix.add', () => {
         + 'dimensions', () => {
         var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         var b = [[1, 2], [3, 4], [5, 6]];
-        assert.throws(() => {
-            add(a, b);
-        }, MatrixError, 'Matrices are not of the same dimensions.');
+        assert.throws(() => add(a, b), MatrixError,
+            'Matrices are not of the same dimensions.');
     });
 
     it('should perform scalar addition when given a matrix and a scalar '
@@ -42,17 +41,14 @@ describe('matrix.add', () => {
     it('should throw MatrixError when given an invalid matrix', () => {
         var a = [[1, 2, 3], [4, 5], [7, 8, 9]];
         var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
-        assert.throws(() => {
-            add(a, b);
-        }, MatrixError, 'A given matrix is invalid.');
+        assert.throws(() => add(a, b), MatrixError,
+            'A given matrix is invalid.');
     });
 
     it('should throw MatrixError when not given any matrices', () => {
         var a = 2;
         var b = 3;
-        assert.throws(() => {
-            add(a, b);
-        }, MatrixError, 'No matrices given.');
+        assert.throws(() => add(a, b), MatrixError, 'No matrices given.');
     });
 
     it('should be integrated to Array.prototype', () => {
