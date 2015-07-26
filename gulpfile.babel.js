@@ -27,7 +27,7 @@ gulp.task('compile', () => {
 
 
 gulp.task('compress', ['compile'], () => {
-    return gulp.src('build/**/*.js')
+    return gulp.src(['build/**/*.js', '!build/**/*.min.js'])
         .pipe(uglify())
         .pipe(rename(function(path) {
             path.extname = '.min.js';
