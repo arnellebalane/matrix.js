@@ -3,7 +3,6 @@ import jshint from 'gulp-jshint';
 import jscs from 'gulp-jscs';
 import stylish from 'gulp-jscs-stylish';
 import uglify from 'gulp-uglify';
-import rename from 'gulp-rename';
 import babel from 'gulp-babel';
 import gutil from 'gulp-util';
 
@@ -20,20 +19,11 @@ gulp.task('lint', () => {
 
 
 gulp.task('compile', () => {
-    return gulp.src(['src/**/*.js'])
+    return gulp.src(['src/**/*.js', 'tests/**/*.js'], { base: '.' })
         .pipe(babel())
-        .pipe(gulp.dest('build'));
-});
-
-
-gulp.task('compress', ['compile'], () => {
-    return gulp.src(['build/**/*.js', '!build/**/*.min.js'])
         .pipe(uglify())
-        .pipe(rename(function(path) {
-            path.extname = '.min.js';
-        }))
         .pipe(gulp.dest('build'));
 });
 
 
-gulp.task('default', ['compile', 'compress']);
+gulp.task('default', ['compile']);
