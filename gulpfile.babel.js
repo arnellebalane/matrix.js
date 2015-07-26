@@ -3,12 +3,14 @@ import jshint from 'gulp-jshint';
 import jscs from 'gulp-jscs';
 import stylish from 'gulp-jscs-stylish';
 import uglify from 'gulp-uglify';
-import rename from 'gulp-rename';
+import babel from 'gulp-babel';
+import plumber from 'gulp-plumber';
 import gutil from 'gulp-util';
 
 
 gulp.task('lint', () => {
     return gulp.src(['src/**/*.js', 'tests/**/*.js', 'gulpfile.js'])
+        .pipe(plumber())
         .pipe(jshint())
         .pipe(jscs())
         .on('error', gutil.noop)
@@ -18,14 +20,18 @@ gulp.task('lint', () => {
 });
 
 
-gulp.task('compress', ['lint'], () => {
-    return gulp.src('src/**/*.js')
+gulp.task('compile', () => {
+    return gulp.src(['src/**/*.js', 'tests/**/*.js'], { base: '.' })
+        .pipe(plumber())
+        .pipe(babel())
         .pipe(uglify())
-        .pipe(rename(function(path) {
-            path.extname = '.min.js';
-        }))
         .pipe(gulp.dest('build'));
 });
 
 
-gulp.task('default', ['lint', 'compress']);
+gulp.task('watch', () => {
+    return gulp.watch(['src/**/*.js', 'tests/**/*.js'], ['compile']);
+});
+
+
+gulp.task('default', ['compile', 'watch']);

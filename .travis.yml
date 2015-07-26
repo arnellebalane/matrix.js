@@ -5,6 +5,5 @@ node_js:
 branches:
     only:
         - master
-script:
-    - gulp lint
-    - npm test
+before_script: gulp compile
+script: npm test
