@@ -11,7 +11,7 @@ javascript utility library for performing matrix operations
 
 Adds the given matrices.
 
-```
+```javascript
 var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
 var result = matrix.add(a, b);
@@ -20,7 +20,7 @@ var result = matrix.add(a, b);
 
 If one of the arguments is a scalar value, performs scalar addition.
 
-```
+```javascript
 var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 var result = matrix.add(3, a);
 // result === [[4, 5, 6], [7, 8, 9], [10, 11, 12]]
@@ -30,7 +30,7 @@ var result = matrix.add(3, a);
 
 Creates an identity matrix with a given dimensions.
 
-```
+```javascript
 var result = matrix.identity(3);
 // result === [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
 ```
@@ -39,7 +39,7 @@ var result = matrix.identity(3);
 
 Multiplies the given matrices.
 
-```
+```javascript
 var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
 var result = matrix.multiply(a, b);
@@ -48,7 +48,7 @@ var result = matrix.multiply(a, b);
 
 If one of the arguments is a scalar value, performs scalar multiplication.
 
-```
+```javascript
 var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 var result = matrix.multiply(2, a);
 // result === [[2, 4, 6], [8, 10, 12], [14, 16, 18]];
@@ -58,7 +58,7 @@ var result = matrix.multiply(2, a);
 
 Creates a ones matrix with the given dimensions.
 
-```
+```javascript
 var result = matrix.ones(3);
 // result === [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
 
@@ -70,7 +70,7 @@ var result = matrix.ones(3, 4);
 
 Transposes the given matrix.
 
-```
+```javascript
 var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 var result = matrix.transpose(a);
 // result === [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
@@ -80,7 +80,7 @@ var result = matrix.transpose(a);
 
 Checks whether the given matrix is a valid matrix.
 
-```
+```javascript
 var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 var result = matrix.valid(a);
 // result === true
@@ -94,7 +94,7 @@ var result = matrix.valid(a);
 
 Creates a zeros matrix with the given dimensions.
 
-```
+```javascript
 var result = matrix.zeros(3);
 // result === [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
