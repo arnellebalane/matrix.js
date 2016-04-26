@@ -17,7 +17,8 @@ function transpose(matrix) {
 }
 
 
-Array.prototype.transpose = function() {
+/* eslint no-extend-native: "off" */
+Array.prototype.transpose = function matrixTranspose() {
     return transpose(this);
 };
 

@@ -48,7 +48,8 @@ function add(a, b) {
 }
 
 
-Array.prototype.add = function(value) {
+/* eslint no-extend-native: "off" */
+Array.prototype.add = function matrixAdd(value) {
     return add(this, value);
 };
 
