@@ -4,7 +4,7 @@ import assert from 'assert';
 
 describe('matrix.add', () => {
     it('should perform matrix addition when given two matrices with the '
-        + 'same dimensions', () => {
+    + 'same dimensions', () => {
         var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
         var expected = [[10, 10, 10], [10, 10, 10], [10, 10, 10]];
@@ -13,7 +13,7 @@ describe('matrix.add', () => {
     });
 
     it('should throw MatrixError when given two matrices with different '
-        + 'dimensions', () => {
+    + 'dimensions', () => {
         var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         var b = [[1, 2], [3, 4], [5, 6]];
         assert.throws(() => add(a, b), MatrixError,
@@ -21,7 +21,7 @@ describe('matrix.add', () => {
     });
 
     it('should perform scalar addition when given a matrix and a scalar '
-        + 'value', () => {
+    + 'value', () => {
         var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         var b = 2;
         var expected = [[3, 4, 5], [6, 7, 8], [9, 10, 11]];
@@ -30,7 +30,7 @@ describe('matrix.add', () => {
     });
 
     it('should perform scalar addition when given a scalar value and a '
-        + 'matrix', () => {
+    + 'matrix', () => {
         var a = 2;
         var b = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         var expected = [[3, 4, 5], [6, 7, 8], [9, 10, 11]];
@@ -58,7 +58,7 @@ describe('matrix.add', () => {
     });
 
     it('should add valid matrices through the Array.prototype '
-        + 'property', () => {
+    + 'property', () => {
         var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
         var expected = [[10, 10, 10], [10, 10, 10], [10, 10, 10]];
