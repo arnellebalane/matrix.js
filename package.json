@@ -24,6 +24,7 @@
     "gulp": "*",
     "gulp-babel": "^5.1.0",
     "gulp-plumber": "^1.0.1",
+    "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.6",
     "istanbul": "^0.3.17",
     "mocha": "^2.2.5"
