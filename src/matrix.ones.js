@@ -1,6 +1,3 @@
-import { MatrixError } from './matrix';
-
-
 function ones(rows, columns) {
     columns = columns || rows;
     if (typeof rows === 'number' && typeof columns === 'number') {

@@ -8,7 +8,6 @@ function _getRow(matrix, index) {
         return matrix[index];
     }
     throw new MatrixError('Row index out of bounds.');
-
 }
 
 
@@ -75,7 +74,8 @@ function multiply(a, b) {
 }
 
 
-Array.prototype.multiply = function(value) {
+/* eslint no-extend-native: "off" */
+Array.prototype.multiply = function matrixMultiple(value) {
     return multiply(this, value);
 };
 

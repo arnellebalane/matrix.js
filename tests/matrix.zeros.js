@@ -1,4 +1,4 @@
-import { zeros, MatrixError } from '../src/matrix';
+import { zeros } from '../src/matrix';
 import assert from 'assert';
 
 
@@ -23,11 +23,10 @@ describe('matrix.zeros', () => {
     });
 
     it('should throw TypeError when any given argument is not a number',
-        () => {
-            assert.throws(() => zeros('string'), TypeError,
-                'Matrix dimensions should be integers.');
-            assert.throws(() => zeros(3, 'string'), TypeError,
-                'Matrix dimensions should be integers.');
-        }
-    );
+    () => {
+        assert.throws(() => zeros('string'), TypeError,
+            'Matrix dimensions should be integers.');
+        assert.throws(() => zeros(3, 'string'), TypeError,
+            'Matrix dimensions should be integers.');
+    });
 });

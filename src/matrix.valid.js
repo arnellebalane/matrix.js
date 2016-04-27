@@ -11,7 +11,8 @@ function valid(matrix) {
 }
 
 
-Array.prototype.valid = function() {
+/* eslint no-extend-native: "off" */
+Array.prototype.valid = function matrixValid() {
     return valid(this);
 };
 

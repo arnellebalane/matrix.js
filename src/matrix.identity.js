@@ -16,7 +16,8 @@ function identity(size) {
 }
 
 
-Array.prototype.identity = function() {
+/* eslint no-extend-native: "off" */
+Array.prototype.identity = function matrixIdentity() {
     return identity(this);
 };
 
