@@ -1,4 +1,4 @@
-// var matrix = require('../src/matrix').matrix;
+// var matrix = require('../source/matrix').matrix;
 // var assert = require('assert');
 //
 // describe('matrix.inverse', () => {

@@ -1,4 +1,4 @@
-import { add, MatrixError } from '../src/matrix';
+import { add, MatrixError } from '../source/matrix';
 import assert from 'assert';
 
 

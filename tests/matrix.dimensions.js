@@ -1,4 +1,4 @@
-import { dimensions, MatrixError } from '../src/matrix';
+import { dimensions, MatrixError } from '../source/matrix';
 import assert from 'assert';
 
 

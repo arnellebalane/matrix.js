@@ -1,4 +1,4 @@
-import { multiply, MatrixError } from '../src/matrix';
+import { multiply, MatrixError } from '../source/matrix';
 import assert from 'assert';
 
 describe('matrix.multiply', () => {

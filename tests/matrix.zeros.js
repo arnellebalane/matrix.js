@@ -1,4 +1,4 @@
-import { zeros } from '../src/matrix';
+import { zeros } from '../source/matrix';
 import assert from 'assert';
 
 

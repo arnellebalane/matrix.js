@@ -1,4 +1,4 @@
-import { ones } from '../src/matrix';
+import { ones } from '../source/matrix';
 import assert from 'assert';
 
 

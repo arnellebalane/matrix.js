@@ -1,4 +1,4 @@
-import { valid } from '../src/matrix';
+import { valid } from '../source/matrix';
 import assert from 'assert';
 
 

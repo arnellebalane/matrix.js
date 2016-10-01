@@ -7,7 +7,7 @@ import gutil from 'gulp-util';
 
 const PATHS = {
     'javascripts': [
-        'src/**/*.js',
+        'source/**/*.js',
         'tests/**/*.js'
     ]
 };
