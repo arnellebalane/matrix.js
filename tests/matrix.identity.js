@@ -28,10 +28,4 @@ describe('matrix.identity', () => {
         assert.throws(() => identity('a'), MatrixError,
             'Invalid matrix dimensions given.');
     });
-
-    it('should be integrated to Array.prototype', () => {
-        var expected = true;
-        var actual = Array.prototype.hasOwnProperty('identity');
-        assert.equal(expected, actual);
-    });
 });

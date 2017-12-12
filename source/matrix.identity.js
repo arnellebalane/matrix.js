@@ -16,10 +16,4 @@ function identity(size) {
 }
 
 
-/* eslint no-extend-native: "off" */
-Array.prototype.identity = function matrixIdentity() {
-    return identity(this);
-};
-
-
 module.exports = identity;
