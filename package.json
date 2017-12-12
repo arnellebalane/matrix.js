@@ -8,6 +8,7 @@
     "prebuild": "npm run clean",
     "build": "babel source --out-dir build",
     "test": "nyc mocha --require babel-register tests/*.js",
+    "test:watch": "npm run test -- -w",
     "check-coverage": "nyc check-coverage --statements=100 --branches=100 --functions=100 --lines=100"
   },
   "repository": {
