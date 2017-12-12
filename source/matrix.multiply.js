@@ -3,13 +3,12 @@ import dimensions from './matrix.dimensions';
 import valid from './matrix.valid';
 
 
-function _getRow(matrix, index) {
+function getRow(matrix, index) {
     return matrix[index];
 }
 
 
-
-function _getColumn(matrix, index) {
+function getColumn(matrix, index) {
     const column = [];
     for (let i = 0; i < matrix.length; i++) {
         column.push(matrix[i][index]);
@@ -18,13 +17,13 @@ function _getColumn(matrix, index) {
 }
 
 
-function _matrixMultiplication(a, b) {
+function matrixMultiplication(a, b) {
     const result = [];
     for (let i = 0; i < a.length && i < b.length; i++) {
         result.push([]);
-        const row = _getRow(a, i);
+        const row = getRow(a, i);
         for (let j = 0; j < a[0].length && j < b[0].length; j++) {
-            const column = _getColumn(b, j);
+            const column = getColumn(b, j);
             result[i][j] = 0;
             for (let k = 0; k < row.length; k++) {
                 result[i][j] += row[k] * column[k];
@@ -35,7 +34,7 @@ function _matrixMultiplication(a, b) {
 }
 
 
-function _scalarMultiplication(matrix, scalar) {
+function scalarMultiplication(matrix, scalar) {
     const result = [];
     for (let i = 0; i < matrix.length; i++) {
         result.push([]);
@@ -54,15 +53,15 @@ function multiply(a, b) {
         } else if (dimensions(a).columns !== dimensions(b).rows) {
             throw new MatrixError('Given matrices are incompatible.');
         }
-        return _matrixMultiplication(a, b);
+        return matrixMultiplication(a, b);
     } else if ((typeof a === 'number' && b instanceof Array)
-            || (typeof b === 'number' && a instanceof Array)) {
+    || (typeof b === 'number' && a instanceof Array)) {
         const matrix = a instanceof Array ? a : b;
         const scalar = a instanceof Array ? b : a;
         if (!valid(matrix)) {
             throw new MatrixError('A given matrix is invalid.');
         }
-        return _scalarMultiplication(matrix, scalar);
+        return scalarMultiplication(matrix, scalar);
     }
     throw new MatrixError('No matrices given.');
 }

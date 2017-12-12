@@ -19,8 +19,7 @@ describe('matrix.dimensions', () => {
 
     it('should throw MatrixError when given an invalid matrix', () => {
         const a = [[1, 2, 3], [4, 5], [6, 7, 8]];
-        assert.throws(() => dimensions(a), MatrixError,
-            'Given matrix is invalid.');
+        assert.throws(() => dimensions(a), MatrixError, 'Given matrix is invalid.');
     });
 
     it('should be integated to Array.prototype', () => {
@@ -29,8 +28,7 @@ describe('matrix.dimensions', () => {
         assert.equal(expected, actual);
     });
 
-    it('should return matrix dimensions through the Array.prototype '
-    + 'property', () => {
+    it('should return matrix dimensions through the Array.prototype property', () => {
         const a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
         const expected = { rows: 3, columns: 3 };
         const actual = a.dimensions();

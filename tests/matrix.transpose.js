@@ -40,8 +40,7 @@ describe('matrix.transpose', () => {
 
     it('should throw MatrixError when given an invalid matrix', () => {
         const a = [[1, 2, 3], [4, 5], [7, 8, 9]];
-        assert.throws(() => transpose(a), MatrixError,
-            'Given matrix is invalid.');
+        assert.throws(() => transpose(a), MatrixError, 'Given matrix is invalid.');
     });
 
     it('should throw MatrixError when not given a matrix', () => {
@@ -55,11 +54,10 @@ describe('matrix.transpose', () => {
         assert.equal(expected, actual);
     });
 
-    it('should transpose an array through the Array.prototype property',
-        () => {
-            const a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-            const expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]];
-            const actual = a.transpose();
-            assert.deepEqual(expected, actual);
-        });
+    it('should transpose an array through the Array.prototype property', () => {
+        const a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        const expected = [[1, 4, 7], [2, 5, 8], [3, 6, 9]];
+        const actual = a.transpose();
+        assert.deepEqual(expected, actual);
+    });
 });

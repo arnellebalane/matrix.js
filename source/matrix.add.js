@@ -2,7 +2,7 @@ import { MatrixError } from './matrix';
 import valid from './matrix.valid';
 
 
-function _matrixAddition(a, b) {
+function matrixAddition(a, b) {
     const result = [];
     for (let i = 0; i < a.length; i++) {
         result.push([]);
@@ -14,7 +14,7 @@ function _matrixAddition(a, b) {
 }
 
 
-function _scalarAddition(matrix, scalar) {
+function scalarAddition(matrix, scalar) {
     const result = [];
     for (let i = 0; i < matrix.length; i++) {
         result.push([]);
@@ -34,15 +34,15 @@ function add(a, b) {
             throw new MatrixError('Matrices are not of the same '
                 + 'dimensions.');
         }
-        return _matrixAddition(a, b);
+        return matrixAddition(a, b);
     } else if ((typeof a === 'number' && b instanceof Array)
-            || (typeof b === 'number' && a instanceof Array)) {
+    || (typeof b === 'number' && a instanceof Array)) {
         const matrix = a instanceof Array ? a : b;
         const scalar = a instanceof Array ? b : a;
         if (!valid(matrix)) {
             throw new MatrixError('A given matrix is invalid.');
         }
-        return _scalarAddition(matrix, scalar);
+        return scalarAddition(matrix, scalar);
     }
     throw new MatrixError('No matrices given.');
 }
