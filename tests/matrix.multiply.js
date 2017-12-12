@@ -51,6 +51,10 @@ describe('matrix.multiply', () => {
         var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
         assert.throws(() => multiply(a, b), MatrixError,
             'A given matrix is invalid.');
+
+        var b = 3;
+        assert.throws(() => multiply(a, b), MatrixError,
+            'A given matrix is invalid.');
     });
 
     it('should throw MatrixError when not given any matrices', () => {

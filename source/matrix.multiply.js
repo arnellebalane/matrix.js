@@ -4,23 +4,17 @@ import valid from './matrix.valid';
 
 
 function _getRow(matrix, index) {
-    if (index < matrix.length) {
-        return matrix[index];
-    }
-    throw new MatrixError('Row index out of bounds.');
+    return matrix[index];
 }
 
 
 
 function _getColumn(matrix, index) {
-    if (index < matrix[0].length) {
-        var column = [];
-        for (var i = 0; i < matrix.length; i++) {
-            column.push(matrix[i][index]);
-        }
-        return column;
+    var column = [];
+    for (var i = 0; i < matrix.length; i++) {
+        column.push(matrix[i][index]);
     }
-    throw new MatrixError('Column index out of bounds.');
+    return column;
 }
 
 
