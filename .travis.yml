@@ -12,5 +12,5 @@ branches:
         - master
 script:
     - npm test
-    - npm check-coverage
-    - npm lint
+    - npm run check-coverage
+    - npm run lint
