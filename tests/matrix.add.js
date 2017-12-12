@@ -43,6 +43,10 @@ describe('matrix.add', () => {
         var b = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
         assert.throws(() => add(a, b), MatrixError,
             'A given matrix is invalid.');
+
+        b = 3;
+        assert.throws(() => add(a, b), MatrixError,
+            'A given matrix is invalid.');
     });
 
     it('should throw MatrixError when not given any matrices', () => {
