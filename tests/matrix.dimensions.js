@@ -28,4 +28,12 @@ describe('matrix.dimensions', () => {
         var actual = Array.prototype.hasOwnProperty('dimensions');
         assert.equal(expected, actual);
     });
+
+    it('should return matrix dimensions through the Array.prototype '
+    + 'property', () => {
+        var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        var expected = { 'rows': 3, 'columns': 3 };
+        var actual = a.dimensions();
+        assert.deepEqual(expected, actual);
+    });
 });
