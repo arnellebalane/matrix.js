@@ -17,7 +17,7 @@ When you find a bug in this package, please open an issue for it. When creating 
 If you want to work on fixing an open issue, here are the steps on how you can do so:
 
 1. Fork this repository, and work on fixing the issue in your fork.
-2. This package comes with a build system (using Gulp, mostly for transpiling ES2015 code). Run it with `gulp build`
+2. This package comes with a build system. Run it with `npm run build`.
 3. This package also comes with tests, which can be run with `npm test`.
 4. Once you are done fixing an issue, submit a pull request from your fork back to this repository. It will be reviewed, and if it does what it's supposed to do properly it will be merged.
 
