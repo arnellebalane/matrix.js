@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "javascript utility library for performing matrix operations",
   "scripts": {
+    "clean": "rm -rf build",
     "commit": "git-cz",
+    "prebuild": "npm run clean",
+    "build": "babel source --out-dir build",
     "test": "mocha --require babel-register tests/*.js"
   },
   "repository": {
@@ -20,6 +23,7 @@
   },
   "homepage": "https://github.com/arnellebalane/matrix.js",
   "devDependencies": {
+    "babel-cli": "6.26.0",
     "babel-preset-es2015": "6.24.1",
     "babel-register": "6.26.0",
     "commitizen": "2.9.6",
