@@ -10,8 +10,8 @@ function _getRow(matrix, index) {
 
 
 function _getColumn(matrix, index) {
-    var column = [];
-    for (var i = 0; i < matrix.length; i++) {
+    const column = [];
+    for (let i = 0; i < matrix.length; i++) {
         column.push(matrix[i][index]);
     }
     return column;
@@ -19,14 +19,14 @@ function _getColumn(matrix, index) {
 
 
 function _matrixMultiplication(a, b) {
-    var result = [];
-    for (var i = 0; i < a.length && i < b.length; i++) {
+    const result = [];
+    for (let i = 0; i < a.length && i < b.length; i++) {
         result.push([]);
-        var row = _getRow(a, i);
-        for (var j = 0; j < a[0].length && j < b[0].length; j++) {
-            var column = _getColumn(b, j);
+        const row = _getRow(a, i);
+        for (let j = 0; j < a[0].length && j < b[0].length; j++) {
+            const column = _getColumn(b, j);
             result[i][j] = 0;
-            for (var k = 0; k < row.length; k++) {
+            for (let k = 0; k < row.length; k++) {
                 result[i][j] += row[k] * column[k];
             }
         }
@@ -36,10 +36,10 @@ function _matrixMultiplication(a, b) {
 
 
 function _scalarMultiplication(matrix, scalar) {
-    var result = [];
-    for (var i = 0; i < matrix.length; i++) {
+    const result = [];
+    for (let i = 0; i < matrix.length; i++) {
         result.push([]);
-        for (var j = 0; j < matrix[i].length; j++) {
+        for (let j = 0; j < matrix[i].length; j++) {
             result[i].push(matrix[i][j] * scalar);
         }
     }
@@ -57,8 +57,8 @@ function multiply(a, b) {
         return _matrixMultiplication(a, b);
     } else if ((typeof a === 'number' && b instanceof Array)
             || (typeof b === 'number' && a instanceof Array)) {
-        var matrix = a instanceof Array ? a : b;
-        var scalar = a instanceof Array ? b : a;
+        const matrix = a instanceof Array ? a : b;
+        const scalar = a instanceof Array ? b : a;
         if (!valid(matrix)) {
             throw new MatrixError('A given matrix is invalid.');
         }

@@ -3,10 +3,10 @@ import valid from './matrix.valid';
 
 
 function _matrixAddition(a, b) {
-    var result = [];
-    for (var i = 0; i < a.length; i++) {
+    const result = [];
+    for (let i = 0; i < a.length; i++) {
         result.push([]);
-        for (var j = 0; j < b.length; j++) {
+        for (let j = 0; j < b.length; j++) {
             result[i].push(a[i][j] + b[i][j]);
         }
     }
@@ -15,10 +15,10 @@ function _matrixAddition(a, b) {
 
 
 function _scalarAddition(matrix, scalar) {
-    var result = [];
-    for (var i = 0; i < matrix.length; i++) {
+    const result = [];
+    for (let i = 0; i < matrix.length; i++) {
         result.push([]);
-        for (var j = 0; j < matrix[i].length; j++) {
+        for (let j = 0; j < matrix[i].length; j++) {
             result[i].push(matrix[i][j] + scalar);
         }
     }
@@ -37,8 +37,8 @@ function add(a, b) {
         return _matrixAddition(a, b);
     } else if ((typeof a === 'number' && b instanceof Array)
             || (typeof b === 'number' && a instanceof Array)) {
-        var matrix = a instanceof Array ? a : b;
-        var scalar = a instanceof Array ? b : a;
+        const matrix = a instanceof Array ? a : b;
+        const scalar = a instanceof Array ? b : a;
         if (!valid(matrix)) {
             throw new MatrixError('A given matrix is invalid.');
         }
