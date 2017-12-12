@@ -9,7 +9,8 @@
     "build": "babel source --out-dir build",
     "test": "nyc --reporter=lcov mocha tests/*.js --require babel-register",
     "test:watch": "npm run test -- -w",
-    "check-coverage": "nyc check-coverage --statements=100 --branches=100 --functions=100 --lines=100"
+    "check-coverage": "nyc check-coverage --statements=100 --branches=100 --functions=100 --lines=100",
+    "lint": "eslint source/*.js tests/*.js"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,7 @@
       "path": "cz-conventional-changelog"
     },
     "ghooks": {
-      "pre-commit": "npm test && npm run check-coverage"
+      "pre-commit": "npm test && npm run check-coverage && npm run lint"
     }
   }
 }
